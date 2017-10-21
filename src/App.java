@@ -2,16 +2,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 
 public class App extends JPanel implements ActionListener {
 
     public static String storeNumber = "****";
 
-    private JPanel panel1;
+    private JPanel mainPanel;
     private JLabel Title;
-    private JButton setStore;
-
+    private JLabel changeStoreBtn;
 
     // Elements declared here
 
@@ -20,12 +21,14 @@ public class App extends JPanel implements ActionListener {
         // Initialize and setup the elements
 
         add(Title);
-        add(setStore);
+        add(changeStoreBtn, BorderLayout.CENTER);
 
         System.out.println(Title);
-        setStore.addActionListener(new ActionListener() {
+
+        changeStoreBtn.addMouseListener(new MouseAdapter() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
                 storeNumber = JOptionPane.showInputDialog("Enter the store number.");
                 Title.setText("");
                 Title.setText("FCE-UTIL              Store Number: " + storeNumber);
@@ -53,7 +56,7 @@ public class App extends JPanel implements ActionListener {
         frame.setContentPane(pane);
 
         frame.pack();
-        frame.setSize(600, 400);
+        frame.setSize(550, 400);
         frame.setVisible(true);
     }
 

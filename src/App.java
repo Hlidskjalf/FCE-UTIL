@@ -8,13 +8,12 @@ import java.awt.event.MouseEvent;
 
 public class App extends JPanel implements ActionListener {
 
+    // Elements declared here
     public String storeNumber = "****";
 
     private JPanel mainPanel;
     public JLabel Title;
     private JLabel changeStoreBtn;
-
-    // Elements declared here
 
     public App() {
 
@@ -29,7 +28,7 @@ public class App extends JPanel implements ActionListener {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                storeNumber = JOptionPane.showInputDialog("Enter the store number.");
+                storeNumber = ButtonFunctions.setStoreNumber(storeNumber);
                 Title.setText("");
                 Title.setText("FCE-UTIL              Store Number: " + storeNumber);
             }

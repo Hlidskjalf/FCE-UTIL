@@ -4,12 +4,16 @@ public class ButtonFunctions {
 
     // Functions for the buttons to perform on click
 
-    public void setStoreNumber(String storeNumber) {
+    public static String setStoreNumber(String storeNumber) {
         /**
          * Prompt the user for input via JOptionPane input dialog and return that
          * value to the Store Number global variable. This string will be used in every
          * function, so checking it is vital.
          */
+
+        storeNumber = JOptionPane.showInputDialog("Enter the store number.");
+
+        return storeNumber;
 
     }
 

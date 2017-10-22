@@ -8,10 +8,10 @@ import java.awt.event.MouseEvent;
 
 public class App extends JPanel implements ActionListener {
 
-    public static String storeNumber = "****";
+    public String storeNumber = "****";
 
     private JPanel mainPanel;
-    private JLabel Title;
+    public JLabel Title;
     private JLabel changeStoreBtn;
 
     // Elements declared here
@@ -21,7 +21,7 @@ public class App extends JPanel implements ActionListener {
         // Initialize and setup the elements
 
         add(Title);
-        add(changeStoreBtn, BorderLayout.CENTER);
+        add(changeStoreBtn);
 
         System.out.println(Title);
 

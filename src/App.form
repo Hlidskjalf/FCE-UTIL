@@ -47,10 +47,12 @@
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-6710887"/>
           <borderPainted value="false"/>
-          <contentAreaFilled value="true"/>
-          <focusPainted value="false"/>
+          <contentAreaFilled value="false"/>
+          <focusPainted value="true"/>
           <font name="Monospaced" size="16" style="0"/>
+          <label value="Terminate MWS"/>
           <text value="Terminate MWS"/>
           <toolTipText value="Shuts MWS store down completely"/>
         </properties>

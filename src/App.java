@@ -23,11 +23,14 @@ public class App extends JPanel implements ActionListener {
         // Initialize and setup the elements
 
         add(Title);
-        add(termMWS);
         add(changeStoreBtn);
+        add(termMWS);
 
         System.out.println(Title);
 
+
+        // TODO Change this to a button, and set the icon rather than having an image.
+        // This will prevent having to create graphics now, and speed up 2.0 deployment
         changeStoreBtn.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {

@@ -2,6 +2,15 @@ import javax.swing.*;
 
 public class ButtonFunctions {
 
+    // PSEXEC specific variables
+    static String primer = "cmd.exe /c start ";
+    static String psexec = "psexec ";
+    static String head = "\\\\fce-";
+    static String user = " -u helpdesk ";
+    static String password = "-p LimeCoke ";
+    static String mws = " MWSStore.exe";
+    static String exe = ".exe";
+
     // Functions for the buttons to perform on click
 
     public static String setStoreNumber(String storeNumber) {
@@ -41,7 +50,9 @@ public class ButtonFunctions {
          */
 
         //TODO build PSEXEC string to terminate MWS Store remotely
+        String cmd = primer + psexec + head + storeNumber + user + password + "taskkill" + mws;
 
+        System.out.println(cmd);
     }
 
     public void terminateCustomProcess(String storeNumber) {

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="App">
-  <grid id="27dc6" binding="mainPanel" layout-manager="GridBagLayout">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="2" vgap="2">
+    <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="766" height="415"/>
+      <xy x="20" y="20" width="766" height="567"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
       <component id="4a32a" class="javax.swing.JLabel" binding="Title">
         <constraints>
-          <grid row="1" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag weightx="0.0" weighty="0.0"/>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="Monospaced" size="22" style="1"/>
@@ -20,28 +20,41 @@
           <name value="Title"/>
           <opaque value="false"/>
           <text value="FCE-UTIL              Store Number:"/>
+          <verticalAlignment value="1"/>
+          <verticalTextPosition value="1"/>
         </properties>
       </component>
       <component id="f305" class="javax.swing.JLabel" binding="changeStoreBtn">
         <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag top="50" left="10" bottom="10" right="10" weightx="10.0" weighty="10.0"/>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <alignmentX value="1.0"/>
+          <doubleBuffered value="true"/>
           <foreground color="-12828863"/>
-          <horizontalAlignment value="0"/>
-          <horizontalTextPosition value="0"/>
+          <horizontalAlignment value="2"/>
+          <horizontalTextPosition value="2"/>
           <icon value="res/change.png"/>
+          <iconTextGap value="0"/>
           <opaque value="false"/>
           <text value=""/>
+          <verticalAlignment value="3"/>
+          <verticalTextPosition value="3"/>
         </properties>
       </component>
-      <vspacer id="e275d">
+      <component id="7b96b" class="javax.swing.JButton" binding="termMWS">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-          <gridbag weightx="0.0" weighty="0.0" ipady="300"/>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
-      </vspacer>
+        <properties>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="true"/>
+          <focusPainted value="false"/>
+          <font name="Monospaced" size="16" style="0"/>
+          <text value="Terminate MWS"/>
+          <toolTipText value="Shuts MWS store down completely"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

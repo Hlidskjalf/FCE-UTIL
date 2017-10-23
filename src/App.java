@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,12 +15,15 @@ public class App extends JPanel implements ActionListener {
     private JPanel mainPanel;
     public JLabel Title;
     private JLabel changeStoreBtn;
+    private JButton termMWS;
+
 
     public App() {
 
         // Initialize and setup the elements
 
         add(Title);
+        add(termMWS);
         add(changeStoreBtn);
 
         System.out.println(Title);
@@ -31,6 +35,13 @@ public class App extends JPanel implements ActionListener {
                 storeNumber = ButtonFunctions.setStoreNumber(storeNumber);
                 Title.setText("");
                 Title.setText("FCE-UTIL              Store Number: " + storeNumber);
+            }
+        });
+
+        termMWS.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ButtonFunctions.terminateMWS(storeNumber);
             }
         });
     }
@@ -52,6 +63,7 @@ public class App extends JPanel implements ActionListener {
         App pane = new App();
         pane.setOpaque(true);
         pane.setBackground(Color.decode("0x3B3F42"));
+        pane.setBorder(new EmptyBorder(10, 10, 10, 10));
         frame.setContentPane(pane);
 
         frame.pack();

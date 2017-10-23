@@ -34,11 +34,13 @@ public class ButtonFunctions {
 
     }
 
-    public void terminateMWS(String storeNumber) {
+    public static void terminateMWS(String storeNumber) {
         /**
          * @param storeNumber
          * Remotely terminate MWSStore.exe one the site designated by the Store Number
          */
+
+        //TODO build PSEXEC string to terminate MWS Store remotely
 
     }
 

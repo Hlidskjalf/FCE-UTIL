@@ -41,6 +41,7 @@ public class App extends JPanel implements ActionListener {
             }
         });
 
+        // TODO: Test individual actionListeners versus a single actionListener with multiple selector
         termMWS.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -56,6 +57,7 @@ public class App extends JPanel implements ActionListener {
         JFrame frame = new JFrame("FCE-UTIL");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // TODO: Make an icon series for the application. Identify preferred sizes and add to res/
         /* Custom Icon code
         try {
             frame.setIconImage(ImageIO.read(new File("res/cpp_logo.png")));

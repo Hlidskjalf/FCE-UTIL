@@ -33,7 +33,7 @@ public class ButtonFunctions {
          * by the Store Number string.
          */
 
-        String cmd = primer + "ping fce-" + storeNumber;
+        String cmd = primer + "ping fce-" + storeNumber + " -t";
 
         System.out.println(cmd);
     }

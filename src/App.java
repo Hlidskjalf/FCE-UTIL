@@ -50,7 +50,7 @@ public class App extends JPanel implements ActionListener {
                 ButtonFunctions.terminateMWS(storeNumber);
             }
         });
-        
+
         ping.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

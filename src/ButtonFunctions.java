@@ -33,6 +33,9 @@ public class ButtonFunctions {
          * by the Store Number string.
          */
 
+        String cmd = primer + "ping fce-" + storeNumber;
+
+        System.out.println(cmd);
     }
 
     public void rebootStore(String storeNumber) {

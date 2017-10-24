@@ -26,27 +26,9 @@
           <verticalTextPosition value="1"/>
         </properties>
       </component>
-      <component id="f305" class="javax.swing.JLabel" binding="changeStoreBtn">
-        <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <alignmentX value="1.0"/>
-          <doubleBuffered value="true"/>
-          <foreground color="-12828863"/>
-          <horizontalAlignment value="2"/>
-          <horizontalTextPosition value="2"/>
-          <icon value="res/change.png"/>
-          <iconTextGap value="0"/>
-          <opaque value="false"/>
-          <text value=""/>
-          <verticalAlignment value="3"/>
-          <verticalTextPosition value="3"/>
-        </properties>
-      </component>
       <component id="7b96b" class="javax.swing.JButton" binding="termMWS">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <autoscrolls value="false"/>
@@ -64,7 +46,7 @@
       </component>
       <component id="65630" class="javax.swing.JButton" binding="ping">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <autoscrolls value="false"/>
@@ -78,6 +60,25 @@
           <opaque value="true"/>
           <text value="Constant Ping"/>
           <toolTipText value="Initiate a constant ping on the selected site"/>
+        </properties>
+      </component>
+      <component id="65da1" class="javax.swing.JButton" binding="changeStoreBtn">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <actionCommand value="Change Store Number&#10;"/>
+          <autoscrolls value="false"/>
+          <background color="-6710887"/>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="true"/>
+          <focusPainted value="true"/>
+          <font name="Monospaced" size="16" style="0"/>
+          <foreground color="-16777216"/>
+          <label value="Change Store Number"/>
+          <opaque value="true"/>
+          <text value="Change Store Number"/>
+          <toolTipText value="Change the Working Store Number"/>
         </properties>
       </component>
     </children>

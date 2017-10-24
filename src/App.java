@@ -3,9 +3,6 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-
 
 public class App extends JPanel implements ActionListener {
 
@@ -14,7 +11,7 @@ public class App extends JPanel implements ActionListener {
 
     private JPanel mainPanel;
     public JLabel Title;
-    private JLabel changeStoreBtn;
+    private JButton changeStoreBtn;
     private JButton termMWS;
     private JButton ping;
 
@@ -30,20 +27,17 @@ public class App extends JPanel implements ActionListener {
 
         System.out.println(Title);
 
+        // TODO: Test individual actionListeners versus a single actionListener with multiple selector
 
-        // TODO Change this to a button, and set the icon rather than having an image.
-        // This will prevent having to create graphics now, and speed up 2.0 deployment
-        changeStoreBtn.addMouseListener(new MouseAdapter() {
+        changeStoreBtn.addActionListener(new ActionListener() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
+            public void actionPerformed(ActionEvent e) {
                 storeNumber = ButtonFunctions.setStoreNumber(storeNumber);
                 Title.setText("");
                 Title.setText("FCE-UTIL              Store Number: " + storeNumber);
             }
         });
 
-        // TODO: Test individual actionListeners versus a single actionListener with multiple selector
         termMWS.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -57,6 +51,7 @@ public class App extends JPanel implements ActionListener {
                 ButtonFunctions.constantPing(storeNumber);
             }
         });
+
     }
 
     protected static void build() {

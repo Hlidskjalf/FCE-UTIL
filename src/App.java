@@ -16,6 +16,7 @@ public class App extends JPanel implements ActionListener {
     public JLabel Title;
     private JLabel changeStoreBtn;
     private JButton termMWS;
+    private JButton ping;
 
 
     public App() {
@@ -25,6 +26,7 @@ public class App extends JPanel implements ActionListener {
         add(Title);
         add(changeStoreBtn);
         add(termMWS);
+        add(ping);
 
         System.out.println(Title);
 
@@ -46,6 +48,13 @@ public class App extends JPanel implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ButtonFunctions.terminateMWS(storeNumber);
+            }
+        });
+        
+        ping.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ButtonFunctions.constantPing(storeNumber);
             }
         });
     }

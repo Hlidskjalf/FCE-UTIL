@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="App">
-  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="2" vgap="2">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="2" vgap="2">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="766" height="567"/>
     </constraints>
-    <properties/>
+    <properties>
+      <background color="-12828863"/>
+    </properties>
     <border type="none"/>
     <children>
       <component id="4a32a" class="javax.swing.JLabel" binding="Title">
@@ -26,7 +28,7 @@
       </component>
       <component id="f305" class="javax.swing.JLabel" binding="changeStoreBtn">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <alignmentX value="1.0"/>
@@ -47,14 +49,35 @@
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <autoscrolls value="false"/>
           <background color="-6710887"/>
           <borderPainted value="false"/>
-          <contentAreaFilled value="false"/>
+          <contentAreaFilled value="true"/>
           <focusPainted value="true"/>
           <font name="Monospaced" size="16" style="0"/>
+          <foreground color="-16777216"/>
           <label value="Terminate MWS"/>
+          <opaque value="true"/>
           <text value="Terminate MWS"/>
           <toolTipText value="Shuts MWS store down completely"/>
+        </properties>
+      </component>
+      <component id="65630" class="javax.swing.JButton" binding="ping">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <autoscrolls value="false"/>
+          <background color="-6710887"/>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="true"/>
+          <focusPainted value="true"/>
+          <font name="Monospaced" size="16" style="0"/>
+          <foreground color="-16777216"/>
+          <label value="Constant Ping"/>
+          <opaque value="true"/>
+          <text value="Constant Ping"/>
+          <toolTipText value="Initiate a constant ping on the selected site"/>
         </properties>
       </component>
     </children>

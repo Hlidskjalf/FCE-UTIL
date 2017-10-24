@@ -26,7 +26,7 @@ public class ButtonFunctions {
 
     }
 
-    public void constantPing(String storeNumber) {
+    public static void constantPing(String storeNumber) {
         /**
          * @param storeNumber
          * Open a command prompt and run a constant ping on the remote site designated

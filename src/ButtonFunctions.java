@@ -72,7 +72,10 @@ public class ButtonFunctions {
     public void runCleanUpScript(String storeNumber) {
         /**
          * @param storeNumber
-         * Execute clean_up.bat from C:\Install on the site designated by the Store Number
+         * Execute clean_up.bat from C:\Install on the site designated by the Store Number.
+         * This utility is less often used, but making use of the script (include in jar?)
+         * averages 4-7GB of space cleared out. Current PC in use by FCE as of 10/2017 has
+         * a 32GB SSD making space a real concern. 
          */
 
     }

@@ -14,6 +14,7 @@ public class App extends JPanel implements ActionListener {
     private JButton changeStoreBtn;
     private JButton termMWS;
     private JButton ping;
+    private JButton reboot;
 
 
     public App() {
@@ -52,6 +53,12 @@ public class App extends JPanel implements ActionListener {
             }
         });
 
+        reboot.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ButtonFunctions.rebootStore(storeNumber);
+            }
+        });
     }
 
     protected static void build() {

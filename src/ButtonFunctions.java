@@ -38,7 +38,7 @@ public class ButtonFunctions {
         System.out.println(cmd);
     }
 
-    public void rebootStore(String storeNumber) {
+    public static void rebootStore(String storeNumber) {
         /**
          * @param storeNumber
          * Reboot the site using psshutdown using the Store Number

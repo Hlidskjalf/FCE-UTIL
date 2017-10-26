@@ -41,7 +41,7 @@ public class ButtonFunctions {
     public static void rebootStore(String storeNumber) {
         /**
          * @param storeNumber
-         * Reboot the site using psshutdown using the Store Number
+         * Reboot the site using psshutdown using the Store Number.
          */
 
     }
@@ -64,7 +64,7 @@ public class ButtonFunctions {
     public void terminateCustomProcess(String storeNumber) {
         /**
          * @param storeNumber
-         * Remotely terminate anything ending in .exe one the site designated by the Store Number
+         * Remotely terminate anything ending in .exe one the site designated by the Store Number.
          */
 
     }
@@ -75,14 +75,14 @@ public class ButtonFunctions {
          * Execute clean_up.bat from C:\Install on the site designated by the Store Number.
          * This utility is less often used, but making use of the script (include in jar?)
          * averages 4-7GB of space cleared out. Current PC in use by FCE as of 10/2017 has
-         * a 32GB SSD making space a real concern. 
+         * a 32GB SSD making space a real concern.
          */
 
     }
 
     public void launchVNC(String storeNumber) {
         /**
-         * Launch a VNC Viewer session with args, provided by the Store Number
+         * Launch a VNC Viewer session with args, provided by the Store Number.
          */
 
     }

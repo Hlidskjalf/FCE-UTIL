@@ -49,7 +49,10 @@ public class ButtonFunctions {
     public static void terminateMWS(String storeNumber) {
         /**
          * @param storeNumber
-         * Remotely terminate MWSStore.exe one the site designated by the Store Number
+         * Remotely terminate MWSStore.exe one the site designated by the Store Number.
+         * Easily the most used utility of the current program, so care is being taken to
+         * test for any scenario and to make sure this is extensible for the migration to
+         * PDI software after Pinnacle is completely phased out.
          */
 
         //TODO build PSEXEC string to terminate MWS Store remotely

@@ -25,6 +25,7 @@ public class App extends JPanel implements ActionListener {
         add(changeStoreBtn);
         add(termMWS);
         add(ping);
+        add(reboot);
 
         System.out.println(Title);
 

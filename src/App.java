@@ -36,7 +36,7 @@ public class App extends JPanel implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 storeNumber = ButtonFunctions.setStoreNumber(storeNumber);
                 Title.setText("");
-                Title.setText("FCE-UTIL              Store Number: " + storeNumber);
+                Title.setText("FCE-UTIL                 Store Number: " + storeNumber);
             }
         });
 

@@ -4,6 +4,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * The primary class for building the GUI and setting the functionality of the
+ * buttons. All buttons use actionPerformed functions that call to custom
+ */
+
 public class App extends JPanel implements ActionListener {
 
     // Elements declared here
@@ -11,7 +16,7 @@ public class App extends JPanel implements ActionListener {
 
     public JPanel mainPanel;
     public JLabel Title;
-    private JButton changeStoreBtn;
+    public JButton changeStoreBtn;
     private JButton termMWS;
     private JButton ping;
     private JButton reboot;
@@ -85,7 +90,7 @@ public class App extends JPanel implements ActionListener {
 
         /**
          * This section is for the ActionListeners for each button. The functions for the buttons is defined
-         * in ButtonFunctions.java. 
+         * in ButtonFunctions.java.
          */
         // TODO: Test individual actionListeners versus a single actionListener with multiple selector
 

@@ -145,13 +145,7 @@ public class App extends JPanel implements ActionListener {
         frame.setSize(570, 450);
         frame.setVisible(true);
     }
-
-    protected static void build() {
-
-        new App();
-    }
-
-
+    
     @Override
     public void actionPerformed(ActionEvent e) {
 

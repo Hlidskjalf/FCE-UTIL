@@ -24,13 +24,22 @@ public class App extends JPanel implements ActionListener {
 
     public App() {
 
-        // Set up the panel, and add GridBagConstraints
+        /**
+         * Set up the panel, and add GridBagConstraints. Using the GridBagConstraints we
+         * are able to force each button to occupy a single line and behave dynamically
+         * when the window is resized.
+         */
+
 
         JPanel panel = new JPanel();
         panel.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
 
-        // GridBagConstraints parameters
+        /**
+         * GridBagConstraints parameters. Sets the weight and Insets for each button.
+         * This overrides the rigid area set to each button below, and forces the buttons to
+         * behave more dynamically.
+         */
 
         c.weightx = 5;
         c.weighty = .5;
@@ -38,7 +47,12 @@ public class App extends JPanel implements ActionListener {
         c.gridwidth = GridBagConstraints.REMAINDER;
         c.fill = GridBagConstraints.BOTH;
 
-        // Set the button width to force each button to be on a single line.
+        /**
+         * Set the button width to force each button to be on a single line. This only sets the
+         * preferred size, which is overriden by the GridBagConstraints. Without the constraints set
+         * this will set the buttons to max width (up to 500px) and achieve the same basic result,
+         * though will look a lot worse.
+         */
 
         changeStoreBtn.add(Box.createRigidArea(new Dimension(500, 25)));
         termMWS.add(Box.createRigidArea(new Dimension(500, 25)));
@@ -49,7 +63,11 @@ public class App extends JPanel implements ActionListener {
         vnc.add(Box.createRigidArea(new Dimension(500, 25)));
         Exit.add(Box.createRigidArea(new Dimension(500, 25)));
 
-        // Add the buttons and the constraint parameters to the panel
+
+        /**
+         * Add the buttons and the constraint parameters to the panel. Each button is added to the panel
+         * with the button object itself, and the constraints (c), to force the appropriate layout.
+         */
 
         panel.add(Title);
         panel.add(blank, c);
@@ -63,10 +81,12 @@ public class App extends JPanel implements ActionListener {
         panel.add(Exit, c);
 
         // Print the title without any values set
-
         System.out.println(Title);
 
-        // ActionListeners for each button
+        /**
+         * This section is for the ActionListeners for each button. The functions for the buttons is defined
+         * in ButtonFunctions.java. 
+         */
         // TODO: Test individual actionListeners versus a single actionListener with multiple selector
 
         changeStoreBtn.addActionListener(new ActionListener() {
@@ -145,7 +165,7 @@ public class App extends JPanel implements ActionListener {
         frame.setSize(570, 450);
         frame.setVisible(true);
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
 

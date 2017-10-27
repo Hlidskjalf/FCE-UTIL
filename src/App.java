@@ -9,26 +9,64 @@ public class App extends JPanel implements ActionListener {
     // Elements declared here
     public String storeNumber = "****";
 
-    private JPanel mainPanel;
+    public JPanel mainPanel;
     public JLabel Title;
     private JButton changeStoreBtn;
     private JButton termMWS;
     private JButton ping;
     private JButton reboot;
+    private JButton termCust;
+    private JButton cleanUp;
+    private JButton vnc;
+    private JButton Exit;
+    private JButton blank;
 
 
     public App() {
 
-        // Initialize and setup the elements
+        // Set up the panel, and add GridBagConstraints
 
-        add(Title);
-        add(changeStoreBtn);
-        add(termMWS);
-        add(ping);
-        add(reboot);
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
+
+        // GridBagConstraints parameters
+
+        c.weightx = 5;
+        c.weighty = .5;
+        c.insets = new Insets(5, 100, 10, 100);
+        c.gridwidth = GridBagConstraints.REMAINDER;
+        c.fill = GridBagConstraints.BOTH;
+
+        // Set the button width to force each button to be on a single line.
+
+        changeStoreBtn.add(Box.createRigidArea(new Dimension(500, 25)));
+        termMWS.add(Box.createRigidArea(new Dimension(500, 25)));
+        ping.add(Box.createRigidArea(new Dimension(500, 25)));
+        reboot.add(Box.createRigidArea(new Dimension(500, 25)));
+        termCust.add(Box.createRigidArea(new Dimension(500, 25)));
+        cleanUp.add(Box.createRigidArea(new Dimension(500, 25)));
+        vnc.add(Box.createRigidArea(new Dimension(500, 25)));
+        Exit.add(Box.createRigidArea(new Dimension(500, 25)));
+
+        // Add the buttons and the constraint parameters to the panel
+
+        panel.add(Title);
+        panel.add(blank, c);
+        panel.add(changeStoreBtn, c);
+        panel.add(termMWS, c);
+        panel.add(ping, c);
+        panel.add(reboot, c);
+        panel.add(termCust, c);
+        panel.add(cleanUp, c);
+        panel.add(vnc, c);
+        panel.add(Exit, c);
+
+        // Print the title without any values set
 
         System.out.println(Title);
 
+        // ActionListeners for each button
         // TODO: Test individual actionListeners versus a single actionListener with multiple selector
 
         changeStoreBtn.addActionListener(new ActionListener() {
@@ -60,9 +98,30 @@ public class App extends JPanel implements ActionListener {
                 ButtonFunctions.rebootStore(storeNumber);
             }
         });
-    }
-
-    protected static void build() {
+        vnc.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ButtonFunctions.launchVNC(storeNumber);
+            }
+        });
+        cleanUp.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ButtonFunctions.runCleanUpScript(storeNumber);
+            }
+        });
+        termCust.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ButtonFunctions.terminateCustomProcess(storeNumber);
+            }
+        });
+        Exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
 
         // Build of the JFrame, icons, and the JPane
 
@@ -77,15 +136,19 @@ public class App extends JPanel implements ActionListener {
             e.printStackTrace();
         } */
 
-        App pane = new App();
-        pane.setOpaque(true);
-        pane.setBackground(Color.decode("0x3B3F42"));
-        pane.setBorder(new EmptyBorder(10, 10, 10, 10));
-        frame.setContentPane(pane);
+        panel.setOpaque(true);
+        panel.setBackground(Color.decode("0x3B3F42"));
+        panel.setBorder(new EmptyBorder(10, 10, 10, 10));
+        frame.setContentPane(panel);
 
         frame.pack();
-        frame.setSize(550, 400);
+        frame.setSize(570, 450);
         frame.setVisible(true);
+    }
+
+    protected static void build() {
+
+        new App();
     }
 
 

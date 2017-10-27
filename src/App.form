@@ -1,34 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="App">
-  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="2" vgap="2">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="7" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="2" vgap="2">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="766" height="567"/>
+      <xy x="20" y="20" width="907" height="567"/>
     </constraints>
     <properties>
       <background color="-12828863"/>
     </properties>
     <border type="none"/>
     <children>
-      <component id="4a32a" class="javax.swing.JLabel" binding="Title">
-        <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font name="Monospaced" size="22" style="1"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <horizontalTextPosition value="0"/>
-          <name value="Title"/>
-          <opaque value="false"/>
-          <text value="FCE-UTIL              Store Number:"/>
-          <verticalAlignment value="1"/>
-          <verticalTextPosition value="1"/>
-        </properties>
-      </component>
       <component id="7b96b" class="javax.swing.JButton" binding="termMWS">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="0" row-span="1" col-span="6" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <autoscrolls value="false"/>
@@ -46,7 +30,7 @@
       </component>
       <component id="65630" class="javax.swing.JButton" binding="ping">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <autoscrolls value="false"/>
@@ -62,9 +46,119 @@
           <toolTipText value="Initiate a constant ping on the selected site"/>
         </properties>
       </component>
+      <component id="ade33" class="javax.swing.JButton" binding="reboot">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <actionCommand value="Change Store Number&#10;"/>
+          <autoscrolls value="false"/>
+          <background color="-6710887"/>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="true"/>
+          <focusPainted value="true"/>
+          <font name="Monospaced" size="16" style="0"/>
+          <foreground color="-16777216"/>
+          <label value="Reboot Store"/>
+          <opaque value="true"/>
+          <text value="Reboot Store"/>
+          <toolTipText value="Reboot the selected Store"/>
+        </properties>
+      </component>
+      <component id="5d3e2" class="javax.swing.JButton" binding="termCust">
+        <constraints>
+          <grid row="6" column="1" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <actionCommand value="Change Store Number&#10;"/>
+          <autoscrolls value="false"/>
+          <background color="-6710887"/>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="true"/>
+          <focusPainted value="true"/>
+          <font name="Monospaced" size="16" style="0"/>
+          <foreground color="-16777216"/>
+          <label value="Terminate Custom"/>
+          <opaque value="true"/>
+          <text value="Terminate Custom"/>
+          <toolTipText value="Taskkill any application ending in .exe"/>
+        </properties>
+      </component>
+      <component id="27fa" class="javax.swing.JButton" binding="cleanUp">
+        <constraints>
+          <grid row="5" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <actionCommand value="Change Store Number&#10;"/>
+          <autoscrolls value="false"/>
+          <background color="-6710887"/>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="true"/>
+          <focusPainted value="true"/>
+          <font name="Monospaced" size="16" style="0"/>
+          <foreground color="-16777216"/>
+          <label value="Clean Up Script"/>
+          <opaque value="true"/>
+          <text value="Clean Up Script"/>
+          <toolTipText value="Run clean_up.bat"/>
+        </properties>
+      </component>
+      <component id="d2dc8" class="javax.swing.JButton" binding="vnc">
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <autoscrolls value="false"/>
+          <background color="-6710887"/>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="true"/>
+          <focusPainted value="true"/>
+          <font name="Monospaced" size="16" style="0"/>
+          <foreground color="-16777216"/>
+          <label value="Launch VNC"/>
+          <opaque value="true"/>
+          <text value="Launch VNC"/>
+          <toolTipText value="Launch VNC"/>
+        </properties>
+      </component>
+      <component id="23d91" class="javax.swing.JButton" binding="Exit">
+        <constraints>
+          <grid row="6" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <actionCommand value="Change Store Number&#10;"/>
+          <autoscrolls value="false"/>
+          <background color="-6710887"/>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="true"/>
+          <focusPainted value="true"/>
+          <font name="Monospaced" size="16" style="0"/>
+          <foreground color="-16777216"/>
+          <label value="Exit"/>
+          <opaque value="true"/>
+          <text value="Exit"/>
+          <toolTipText value="Close the Application"/>
+        </properties>
+      </component>
+      <component id="4a32a" class="javax.swing.JLabel" binding="Title">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Monospaced" size="22" style="1"/>
+          <foreground color="-16777216"/>
+          <horizontalAlignment value="0"/>
+          <horizontalTextPosition value="0"/>
+          <name value="Title"/>
+          <opaque value="false"/>
+          <text value="FCE-UTIL              Store Number:"/>
+          <verticalAlignment value="1"/>
+          <verticalTextPosition value="1"/>
+        </properties>
+      </component>
       <component id="65da1" class="javax.swing.JButton" binding="changeStoreBtn">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <actionCommand value="Change Store Number&#10;"/>
@@ -81,23 +175,26 @@
           <toolTipText value="Change the Working Store Number"/>
         </properties>
       </component>
-      <component id="ade33" class="javax.swing.JButton" binding="reboot">
+      <component id="5c060" class="javax.swing.JButton" binding="blank">
         <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="2" row-span="2" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <actionCommand value="Change Store Number&#10;"/>
           <autoscrolls value="false"/>
           <background color="-6710887"/>
           <borderPainted value="false"/>
-          <contentAreaFilled value="true"/>
-          <focusPainted value="true"/>
+          <contentAreaFilled value="false"/>
+          <enabled value="false"/>
+          <focusPainted value="false"/>
+          <focusable value="false"/>
           <font name="Monospaced" size="16" style="0"/>
           <foreground color="-16777216"/>
-          <label value="Reboot Store"/>
-          <opaque value="true"/>
-          <text value="Reboot Store"/>
-          <toolTipText value="Reboot the selected Store"/>
+          <label value=""/>
+          <opaque value="false"/>
+          <text value=""/>
+          <toolTipText value=""/>
+          <visible value="true"/>
         </properties>
       </component>
     </children>

@@ -61,7 +61,7 @@ public class ButtonFunctions {
         System.out.println(cmd);
     }
 
-    public void terminateCustomProcess(String storeNumber) {
+    public static void terminateCustomProcess(String storeNumber) {
         /**
          * @param storeNumber
          * Remotely terminate anything ending in .exe one the site designated by the Store Number.
@@ -69,7 +69,7 @@ public class ButtonFunctions {
 
     }
 
-    public void runCleanUpScript(String storeNumber) {
+    public static void runCleanUpScript(String storeNumber) {
         /**
          * @param storeNumber
          * Execute clean_up.bat from C:\Install on the site designated by the Store Number.
@@ -80,7 +80,7 @@ public class ButtonFunctions {
 
     }
 
-    public void launchVNC(String storeNumber) {
+    public static void launchVNC(String storeNumber) {
         /**
          * Launch a VNC Viewer session with args, provided by the Store Number.
          */

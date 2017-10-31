@@ -22,12 +22,6 @@ public class ITTBuilder {
 
     public static void createFile() throws IOException {
 
-        /**
-         * Method createFile handles the task of writing the ITT file to be used. The file name must be
-         * unique, so a date/time stamp is used. The actual data that is written to the file is from the
-         * buildFile method, and passed into the Writer class instance.
-         */
-
         System.out.println("Enter 1: ");
         Scanner input = new Scanner(System.in);
         placeholder = input.next().toString();

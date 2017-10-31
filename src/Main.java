@@ -8,7 +8,7 @@ public class Main {
             public void run() {
                 //new App()
                 try {
-                    ITTBuilder.createFile();
+                    ITTBuilder.dataBuilder();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

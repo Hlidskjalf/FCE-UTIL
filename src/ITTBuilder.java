@@ -20,7 +20,7 @@ public class ITTBuilder {
 
     //TODO: Break down the steps and create functions. Leverage the UpdateStores script for pushing the files
 
-    public static void createFile() throws IOException {
+    public static void dataBuilder() throws IOException {
 
         System.out.println("Enter 1: ");
         Scanner input = new Scanner(System.in);

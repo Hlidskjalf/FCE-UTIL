@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -5,7 +7,11 @@ public class Main {
             @Override
             public void run() {
                 //new App();
-                ITTBuilder.createFile();
+                try {
+                    ITTBuilder.createFile();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

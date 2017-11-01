@@ -20,15 +20,15 @@ public class ITTBuilder {
 
     //TODO: Break down the steps and create functions. Leverage the UpdateStores script for pushing the files
 
-    public static void dataBuilder() throws IOException {
+    public static void prepFile() throws IOException {
 
         System.out.println("Enter 1: ");
         Scanner input = new Scanner(System.in);
-        placeholder = input.next().toString();
+        placeholder = input.nextLine().toString();
         System.out.println("Enter 2: ");
-        placeholder2 = input.next().toString();
+        placeholder2 = input.nextLine().toString();
         System.out.println("Enter 3: ");
-        placeholder3 = input.next().toString();
+        placeholder3 = input.nextLine().toString();
         xml += "Line " + placeholder + "\n";
         xml += "Line " + placeholder2 + "\n";
         xml += "Line " + placeholder3 + "\n";

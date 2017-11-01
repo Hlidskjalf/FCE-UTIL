@@ -2,6 +2,7 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Scanner;
 
 public class SEMBuilder extends App {
     /**
@@ -13,29 +14,40 @@ public class SEMBuilder extends App {
 
     //TODO: Break down the steps and create functions. Leverage the UpdateStores script for pushing the files
 
-    public static void createFile() throws IOException {
+        static String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        static String placeholder = "";
+        static String placeholder2 = "";
+        static String placeholder3 = "";
+        static String xml = "";
 
-        /**
-         * Method createFile handles the task of writing the SEM file to be used. The file name must be
-         * unique, so a date/time stamp is used. The actual data that is written to the file is from the
-         * buildFile method, and passed into the Writer class instance.
-         */
-        String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        //TODO: Break down the steps and create functions. Leverage the UpdateStores script for pushing the files
 
-        try (Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("xml/SEM" + timeStamp + ".xml"), StandardCharsets.UTF_8))) {
-            writer.write(buildFile());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public static void prepFile() throws IOException {
+
+        System.out.println("Enter 1: ");
+        Scanner input = new Scanner(System.in);
+        placeholder = input.nextLine().toString();
+        System.out.println("Enter 2: ");
+        placeholder2 = input.nextLine().toString();
+        System.out.println("Enter 3: ");
+        placeholder3 = input.nextLine().toString();
+        xml += "Line " + placeholder + "\n";
+        xml += "Line " + placeholder2 + "\n";
+        xml += "Line " + placeholder3 + "\n";
+        xml += "Line " + placeholder2 + "\n";
+        xml += "Line " + placeholder3 + "\n";
+        xml += "Line two";
+
+        buildFile();
 
     }
 
-    public static String buildFile() {
+    public static void buildFile() {
 
-        //TODO expand on this
-        String xml = "";
-        xml += "Line one\n";
-        xml += "Line two";
-        return xml;
+        try (Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("xml/ITT" + timeStamp + ".xml"), StandardCharsets.UTF_8))) {
+            writer.write(xml);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

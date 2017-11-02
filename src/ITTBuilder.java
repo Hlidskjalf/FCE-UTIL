@@ -13,18 +13,26 @@ public class ITTBuilder {
      */
 
     static String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-    static String placeholder = "";
-    static String placeholder2 = "";
-    static String placeholder3 = "";
+    static String POSCode = "";
+    static String merchCode = "";
+    static String price = "";
     static String xml = "";
 
     //TODO: Break down the steps and create functions. Leverage the UpdateStores script for pushing the files
 
     public static void prepFile() throws IOException {
 
-        System.out.println("Values pertaining to the price book will be entered here: ");
-        Scanner input = new Scanner(System.in);
-        placeholder = input.nextLine().toString();
+        System.out.println("POSCode: ");
+        Scanner pcode = new Scanner(System.in);
+        POSCode = pcode.nextLine().toString();
+
+        System.out.println("MerchandiseCode: ");
+        Scanner mcode = new Scanner(System.in);
+        merchCode = mcode.nextLine().toString();
+
+        System.out.println("price: ");
+        Scanner cost = new Scanner(System.in);
+        price = cost.nextLine().toString();
 
         xml += "<?xml version=\"1.0\" standalone=\"no\" ?>\n";
         xml += "<NAXML-MaintenanceRequest version=\"3.4\" xmlns=\"http://www.naxml.org/POSBO/Vocabulary/2003-10-16\" xmlns:vxt=\"urn:vfi-sapphire:np.naxmlext.2005-06-24\">\n";
@@ -39,10 +47,13 @@ public class ITTBuilder {
         xml += "\t\t\t<RecordAction type=\"addchange\"/>\n";
         xml += "\t\t\t<ItemCode>\n";
         xml += "\t\t\t\t<POSCodeFormat format=\"upcA\"/>\n";
-        xml += "\t\t\t\t<POSCode>" + placeholder + "</POSCode>\n";
+        xml += "\t\t\t\t<POSCode>" + POSCode + "</POSCode>\n";
         xml += "\t\t\t\t<POSCodeModifier name=\"1PK from CASE of 8\">" + 0 + "</POSCodeModifier>\n";
         xml += "\t\t\t</ItemCode>\n";
         xml += "\t\t\t<ITTData>\n";
+        xml += "\t\t\t\t<ActiveFlag value=\"yes\"/>\n";
+        xml += "\t\t\t\t<MerchandiseCode>" + merchCode + "</MerchandiseCode>\n";
+        xml += "\t\t\t\t<RegularSellPrice>" + price + "</RegularSellPrice>\n";
         xml += "\t\t\t</ITTData>\n";
         xml += "\t\t\t<Extension>\n";
         xml += "\t\t\t</Extension>\n";

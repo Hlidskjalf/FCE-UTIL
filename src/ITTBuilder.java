@@ -22,19 +22,33 @@ public class ITTBuilder {
 
     public static void prepFile() throws IOException {
 
-        System.out.println("Enter 1: ");
+        System.out.println("Values pertaining to the price book will be entered here: ");
         Scanner input = new Scanner(System.in);
         placeholder = input.nextLine().toString();
-        System.out.println("Enter 2: ");
-        placeholder2 = input.nextLine().toString();
-        System.out.println("Enter 3: ");
-        placeholder3 = input.nextLine().toString();
-        xml += "Line " + placeholder + "\n";
-        xml += "Line " + placeholder2 + "\n";
-        xml += "Line " + placeholder3 + "\n";
-        xml += "Line " + placeholder2 + "\n";
-        xml += "Line " + placeholder3 + "\n";
-        xml += "Line two";
+
+        xml += "<?xml version=\"1.0\" standalone=\"no\" ?>\n";
+        xml += "<NAXML-MaintenanceRequest version=\"3.4\" xmlns=\"http://www.naxml.org/POSBO/Vocabulary/2003-10-16\" xmlns:vxt=\"urn:vfi-sapphire:np.naxmlext.2005-06-24\">\n";
+        xml += "\t<TransmissionHeader>\n";
+        xml += "\t\t<StoreLocationID>REPLACE WITH STORENUMBER</StoreLocationID>\n";
+        xml += "\t\t<VendorName>Broken Coin</VendorName>\n";
+        xml += "\t</TransmissionHeader>\n";
+        xml += "\t<ItemMaintenance>\n";
+        xml += "\t\t<TableAction type=\"update\"/>\n";
+        xml += "\t\t<RecordAction type=\"addchange\"/>\n";
+        xml += "\t\t<ITTDetail>\n";
+        xml += "\t\t\t<RecordAction type=\"addchange\"/>\n";
+        xml += "\t\t\t<ItemCode>\n";
+        xml += "\t\t\t\t<POSCodeFormat format=\"upcA\"/>\n";
+        xml += "\t\t\t\t<POSCode>" + placeholder + "</POSCode>\n";
+        xml += "\t\t\t\t<POSCodeModifier name=\"1PK from CASE of 8\">" + 0 + "</POSCodeModifier>\n";
+        xml += "\t\t\t</ItemCode>\n";
+        xml += "\t\t\t<ITTData>\n";
+        xml += "\t\t\t</ITTData>\n";
+        xml += "\t\t\t<Extension>\n";
+        xml += "\t\t\t</Extension>\n";
+        xml += "\t\t</ITTDetail>\n";
+        xml += "\t</ItemMaintenance>\n";
+        xml += "<NAXML-MaintenanceRequest>\n";
 
         buildFile();
 

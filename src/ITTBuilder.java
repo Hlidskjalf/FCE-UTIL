@@ -16,6 +16,7 @@ public class ITTBuilder {
     static String POSCode = "";
     static String merchCode = "";
     static String price = "";
+    static String Desc = "";
     static String xml = "";
 
     //TODO: Break down the steps and create functions. Leverage the UpdateStores script for pushing the files
@@ -33,6 +34,10 @@ public class ITTBuilder {
         System.out.println("price: ");
         Scanner cost = new Scanner(System.in);
         price = cost.nextLine().toString();
+
+        System.out.println("Description: ");
+        Scanner desc = new Scanner(System.in);
+        Desc = desc.nextLine().toString();
 
         xml += "<?xml version=\"1.0\" standalone=\"no\" ?>\n";
         xml += "<NAXML-MaintenanceRequest version=\"3.4\" xmlns=\"http://www.naxml.org/POSBO/Vocabulary/2003-10-16\" xmlns:vxt=\"urn:vfi-sapphire:np.naxmlext.2005-06-24\">\n";
@@ -54,6 +59,7 @@ public class ITTBuilder {
         xml += "\t\t\t\t<ActiveFlag value=\"yes\"/>\n";
         xml += "\t\t\t\t<MerchandiseCode>" + merchCode + "</MerchandiseCode>\n";
         xml += "\t\t\t\t<RegularSellPrice>" + price + "</RegularSellPrice>\n";
+        xml += "\t\t\t\t<Description>" + Desc + "</Description>\n";
         xml += "\t\t\t</ITTData>\n";
         xml += "\t\t\t<Extension>\n";
         xml += "\t\t\t</Extension>\n";

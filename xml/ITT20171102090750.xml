@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="no" ?>
+<NAXML-MaintenanceRequest version="3.4" xmlns="http://www.naxml.org/POSBO/Vocabulary/2003-10-16" xmlns:vxt="urn:vfi-sapphire:np.naxmlext.2005-06-24">
+	<TransmissionHeader>
+		<StoreLocationID>REPLACE WITH STORENUMBER</StoreLocationID>
+		<VendorName>Broken Coin</VendorName>
+	</TransmissionHeader>
+	<ItemMaintenance>
+		<TableAction type="update"/>
+		<RecordAction type="addchange"/>
+		<ITTDetail>
+			<RecordAction type="addchange"/>
+			<ItemCode>
+				<POSCodeFormat format="upcA"/>
+				<POSCode>9999</POSCode>
+				<POSCodeModifier name="1PK from CASE of 8">0</POSCodeModifier>
+			</ItemCode>
+			<ITTData>
+				<ActiveFlag value="yes"/>
+				<MerchandiseCode>23456</MerchandiseCode>
+				<RegularSellPrice>3.79</RegularSellPrice>
+				<Description>thing</Description>
+			</ITTData>
+			<Extension>
+			</Extension>
+		</ITTDetail>
+	</ItemMaintenance>
+<NAXML-MaintenanceRequest>

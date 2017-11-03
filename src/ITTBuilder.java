@@ -17,6 +17,7 @@ public class ITTBuilder {
     static String merchCode = "";
     static String price = "";
     static String Desc = "";
+    static String itemID = "";
     static String xml = "";
 
     //TODO: Break down the steps and create functions. Leverage the UpdateStores script for pushing the files
@@ -34,6 +35,10 @@ public class ITTBuilder {
         System.out.println("price: ");
         Scanner cost = new Scanner(System.in);
         price = cost.nextLine().toString();
+
+        System.out.println("Item ID: ");
+        Scanner item = new Scanner(System.in);
+        itemID = item.nextLine().toString();
 
         System.out.println("Description: ");
         Scanner desc = new Scanner(System.in);
@@ -60,8 +65,14 @@ public class ITTBuilder {
         xml += "\t\t\t\t<MerchandiseCode>" + merchCode + "</MerchandiseCode>\n";
         xml += "\t\t\t\t<RegularSellPrice>" + price + "</RegularSellPrice>\n";
         xml += "\t\t\t\t<Description>" + Desc + "</Description>\n";
+        xml += "\t\t\t\t<ItemID>" + itemID + "</ItemID>\n";
+        xml += "\t\t\t\t<PaymentSystemsProductCode>400</PaymentSystemsProductCode>\n";
+        xml += "\t\t\t\t<SellingUnits>1</SellingUnits>\n";
+        xml += "\t\t\t\tTaxStrategyID>1</TaxStrategyID>\n";
+        xml += "\t\t\t\t<PriceRequiredFlag value=\"no\"/>\n";
         xml += "\t\t\t</ITTData>\n";
         xml += "\t\t\t<Extension>\n";
+        xml += "\t\t\t\t<vxt:FlagArticleFoodStamp value=\"no\"/>\n";
         xml += "\t\t\t</Extension>\n";
         xml += "\t\t</ITTDetail>\n";
         xml += "\t</ItemMaintenance>\n";

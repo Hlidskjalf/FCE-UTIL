@@ -88,9 +88,7 @@ public class App extends JPanel implements ActionListener {
         panel.add(vnc, c);
         panel.add(price_update, c);
         panel.add(Exit, c);
-
-        // Print the title without any values set
-        System.out.println(Title);
+        
 
         /**
          * This section is for the ActionListeners for each button. The functions for the buttons is defined

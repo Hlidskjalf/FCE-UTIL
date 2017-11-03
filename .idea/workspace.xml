@@ -49,8 +49,8 @@
       <file leaf-file-name="ITTBuilder.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ITTBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="117" column="48" lean-forward="true" selection-start-line="117" selection-start-column="48" selection-end-line="117" selection-end-column="48" />
+            <state relative-caret-position="-27">
+              <caret line="58" column="50" lean-forward="true" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,10 +83,12 @@
     <findStrings>
       <find>nmr</find>
       <find>ItemCode</find>
+      <find>sem</find>
     </findStrings>
     <replaceStrings>
       <replace>sem</replace>
       <replace>TransmissionHeader</replace>
+      <replace>itt</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -772,8 +774,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ITTBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="117" column="48" lean-forward="true" selection-start-line="117" selection-start-column="48" selection-end-line="117" selection-end-column="48" />
+        <state relative-caret-position="-27">
+          <caret line="58" column="50" lean-forward="true" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

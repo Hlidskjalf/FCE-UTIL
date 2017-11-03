@@ -48,72 +48,72 @@ public class ITTBuilder {
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 
             // NAXML-MaintenanceRequest block
-            Document sem = docBuilder.newDocument();
-            Element rootElement = sem.createElement("NAXML-MaintenanceRequest");
-            Attr version = sem.createAttribute("version");
+            Document itt = docBuilder.newDocument();
+            Element rootElement = itt.createElement("NAXML-MaintenanceRequest");
+            Attr version = itt.createAttribute("version");
             version.setValue("3.4");
-            Attr xmlns = sem.createAttribute("xmlns");
+            Attr xmlns = itt.createAttribute("xmlns");
             xmlns.setValue("http://www.naxml.org/POSBO/Vocabulary/2003-10-16");
-            Attr xmlns_vxt = sem.createAttribute("xmlns:vxt");
+            Attr xmlns_vxt = itt.createAttribute("xmlns:vxt");
             xmlns_vxt.setValue("urn:vfi-sapphire:np.naxmlext.2005-06-24");
             rootElement.setAttributeNode(version);
             rootElement.setAttributeNode(xmlns);
             rootElement.setAttributeNode(xmlns_vxt);
-            sem.appendChild(rootElement);
+            itt.appendChild(rootElement);
 
 
             // Transmission header block, appended to root
-            Element transmissionHeader = sem.createElement("TransmissionHeader");
+            Element transmissionHeader = itt.createElement("TransmissionHeader");
             rootElement.appendChild(transmissionHeader);
 
             // StoreLocationID tag
-            Element storeLocationID = sem.createElement("StoreLocationID");
-            storeLocationID.appendChild(sem.createTextNode("1099"));
+            Element storeLocationID = itt.createElement("StoreLocationID");
+            storeLocationID.appendChild(itt.createTextNode("1099"));
             transmissionHeader.appendChild(storeLocationID);
 
             // VendorName tag
-            Element vendorName = sem.createElement("VendorName");
-            vendorName.appendChild(sem.createTextNode("Broken Coin"));
+            Element vendorName = itt.createElement("VendorName");
+            vendorName.appendChild(itt.createTextNode("Broken Coin"));
             transmissionHeader.appendChild(vendorName);
 
             // VendorModelVersion tag
-            Element vendorModelVersion = sem.createElement("VendorModelVersion");
-            vendorModelVersion.appendChild(sem.createTextNode("MWS"));
+            Element vendorModelVersion = itt.createElement("VendorModelVersion");
+            vendorModelVersion.appendChild(itt.createTextNode("MWS"));
             transmissionHeader.appendChild(vendorModelVersion);
 
             // End of TransmissionHeader block
 
             //ItemMaintenance block, appended to root
-            Element itemMaintenance = sem.createElement("ItemMaintenance");
+            Element itemMaintenance = itt.createElement("ItemMaintenance");
             rootElement.appendChild(itemMaintenance);
 
             // TableAction tag
-            Element tableAction = sem.createElement("TableAction");
-            Attr ttype = sem.createAttribute("type");
+            Element tableAction = itt.createElement("TableAction");
+            Attr ttype = itt.createAttribute("type");
             ttype.setValue("update");
             tableAction.setAttributeNode(ttype);
             itemMaintenance.appendChild(tableAction);
 
             // RecordAction tag
-            Element recordAction = sem.createElement("RecordAction");
+            Element recordAction = itt.createElement("RecordAction");
             recordAction.setAttribute("type", "addchange");
             itemMaintenance.appendChild(recordAction);
 
             // ITTDetail block, appended to ItemMaintenance tag
-            Element ittDetail = sem.createElement("ITTDetail");
+            Element ittDetail = itt.createElement("ITTDetail");
             itemMaintenance.appendChild(ittDetail);
 
             // ittDetailRecordAction tag
-            Element ittDetailRecordAction = sem.createElement("RecordAction");
+            Element ittDetailRecordAction = itt.createElement("RecordAction");
             ittDetailRecordAction.setAttribute("type", "addchange");
             ittDetail.appendChild(ittDetailRecordAction);
 
             // ItemCode block, appended to ITTDetail tag
-            Element itemCode = sem.createElement("ItemCode");
+            Element itemCode = itt.createElement("ItemCode");
             ittDetail.appendChild(itemCode);
 
             // POSCodeFormat tag
-            Element posCodeFormat = sem.createElement("POSCodeFormat");
+            Element posCodeFormat = itt.createElement("POSCodeFormat");
             posCodeFormat.setAttribute("format", "upcA");
             itemCode.appendChild(posCodeFormat);
 
@@ -130,7 +130,7 @@ public class ITTBuilder {
             Transformer transformer = transformerFactory.newTransformer();
 
             // Data in the file to be written
-            DOMSource source = new DOMSource(sem);
+            DOMSource source = new DOMSource(itt);
 
             // Writing the file (set PATH here)
             StreamResult result = new StreamResult(new File("xml/ITT" + timeStamp + ".xml"));

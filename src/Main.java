@@ -6,13 +6,7 @@ public class Main {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                //new App()
-                try {
-                    ITTBuilder.prepFile();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
+                new App();
             }
         });
     }

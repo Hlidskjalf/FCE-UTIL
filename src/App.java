@@ -3,6 +3,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 /**
  * The primary class for building the GUI and setting the functionality of the
@@ -25,6 +26,7 @@ public class App extends JPanel implements ActionListener {
     private JButton vnc;
     private JButton Exit;
     private JButton blank;
+    private JButton price_update;
 
 
     public App() {
@@ -66,6 +68,7 @@ public class App extends JPanel implements ActionListener {
         termCust.add(Box.createRigidArea(new Dimension(500, 25)));
         cleanUp.add(Box.createRigidArea(new Dimension(500, 25)));
         vnc.add(Box.createRigidArea(new Dimension(500, 25)));
+        price_update.add(Box.createRigidArea(new Dimension(500, 25)));
         Exit.add(Box.createRigidArea(new Dimension(500, 25)));
 
 
@@ -83,6 +86,7 @@ public class App extends JPanel implements ActionListener {
         panel.add(termCust, c);
         panel.add(cleanUp, c);
         panel.add(vnc, c);
+        panel.add(price_update, c);
         panel.add(Exit, c);
 
         // Print the title without any values set
@@ -141,6 +145,16 @@ public class App extends JPanel implements ActionListener {
                 ButtonFunctions.terminateCustomProcess(storeNumber);
             }
         });
+        price_update.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    ITTBuilder.prepFile();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
         Exit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -169,6 +183,7 @@ public class App extends JPanel implements ActionListener {
         frame.pack();
         frame.setSize(570, 450);
         frame.setVisible(true);
+
     }
 
     @Override

@@ -42,6 +42,12 @@ public class ITTBuilder {
 
         // DOM Version
 
+        POSCode = JOptionPane.showInputDialog("Enter the POS Code");
+        merchCode = JOptionPane.showInputDialog("Enter the Merchandise Code");
+        price = JOptionPane.showInputDialog("Enter the Unit Price");
+        Desc = JOptionPane.showInputDialog("Enter the Item Description");
+        itemID = JOptionPane.showInputDialog("Enter the Item ID");
+
         try {
 
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
@@ -119,7 +125,7 @@ public class ITTBuilder {
 
             // POSCode tag
             Element posCode = itt.createElement("POSCode");
-            posCode.appendChild(itt.createTextNode("************"));
+            posCode.appendChild(itt.createTextNode(POSCode));
             itemCode.appendChild(posCode);
 
             // POSCodeModifier tag
@@ -140,24 +146,24 @@ public class ITTBuilder {
             ittData.appendChild(activeFlag);
 
             // MerchandiseCode tag
-            Element merchCode = itt.createElement("MerchandiseCode");
-            merchCode.appendChild(itt.createTextNode("200"));
-            ittData.appendChild(merchCode);
+            Element merchandiseCode = itt.createElement("MerchandiseCode");
+            merchandiseCode.appendChild(itt.createTextNode(merchCode));
+            ittData.appendChild(merchandiseCode);
 
             // RegularSellPrice tag
             Element regularSellPrice = itt.createElement("RegularSellPrice");
-            regularSellPrice.appendChild(itt.createTextNode("3.79"));
+            regularSellPrice.appendChild(itt.createTextNode(price));
             ittData.appendChild(regularSellPrice);
 
             // Description tag
             Element description = itt.createElement("Description");
-            description.appendChild(itt.createTextNode("ITEM DESCRIPTION"));
+            description.appendChild(itt.createTextNode(Desc));
             ittData.appendChild(description);
 
             // ItemID tag
-            Element itemID = itt.createElement("ItemID");
-            itemID.appendChild(itt.createTextNode("*****"));
-            ittData.appendChild(itemID);
+            Element itemIDtag = itt.createElement("ItemID");
+            itemIDtag.appendChild(itt.createTextNode(itemID));
+            ittData.appendChild(itemIDtag);
 
             // PaymentSystemsProductCode tag
             Element paymentSystemsProductCode = itt.createElement("PaymentSystemsProductCode");
@@ -219,8 +225,7 @@ public class ITTBuilder {
         }
     }
 
-/*  Manual version - human readable
-
+/*
         // JOptionPane dialogs to gather pricebook variables
 
         POSCode = JOptionPane.showInputDialog("Enter the POS Code");

@@ -154,6 +154,11 @@ public class ITTBuilder {
             description.appendChild(itt.createTextNode("ITEM DESCRIPTION"));
             ittData.appendChild(description);
 
+            // ItemID tag
+            Element itemID = itt.createElement("ItemID");
+            itemID.appendChild(itt.createTextNode("*****"));
+            ittData.appendChild(itemID);
+
             // End of ITTData block
 
             // End of ITTDetail block

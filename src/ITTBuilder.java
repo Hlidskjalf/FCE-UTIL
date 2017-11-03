@@ -47,7 +47,7 @@ public class ITTBuilder {
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 
-            // Header and root
+            // NAXML-MaintenanceRequest block
             Document sem = docBuilder.newDocument();
             Element rootElement = sem.createElement("NAXML-MaintenanceRequest");
             Attr version = sem.createAttribute("version");
@@ -81,6 +81,8 @@ public class ITTBuilder {
             vendorModelVersion.appendChild(sem.createTextNode("MWS"));
             transmissionHeader.appendChild(vendorModelVersion);
 
+            // End of TransmissionHeader block
+
             //ItemMaintenance block, appended to root
             Element itemMaintenance = sem.createElement("ItemMaintenance");
             rootElement.appendChild(itemMaintenance);
@@ -92,17 +94,31 @@ public class ITTBuilder {
             tableAction.setAttributeNode(ttype);
             itemMaintenance.appendChild(tableAction);
 
-            // RecordAction tag with brevity example
+            // RecordAction tag
             Element recordAction = sem.createElement("RecordAction");
-            //Attr rtype = sem.createAttribute("type");
-            //rtype.setValue("addchange");
-            //recordAction.setAttributeNode(rtype);
             recordAction.setAttribute("type", "addchange");
             itemMaintenance.appendChild(recordAction);
 
             // ITTDetail block, appended to ItemMaintenance tag
             Element ittDetail = sem.createElement("ITTDetail");
             itemMaintenance.appendChild(ittDetail);
+
+            // ittDetailRecordAction tag
+            Element ittDetailRecordAction = sem.createElement("RecordAction");
+            ittDetailRecordAction.setAttribute("type", "addchange");
+            ittDetail.appendChild(ittDetailRecordAction);
+
+            // ItemCode block, appended to ITTDetail tag
+            Element itemCode = sem.createElement("ItemCode");
+            ittDetail.appendChild(itemCode);
+
+            // End of ItemCode block
+
+            // End of ITTDetail block
+
+            // End of ItemMaintenance block
+
+            // End of NAXML-MaintenanceRequest block
 
             // write the content into xml file
             TransformerFactory transformerFactory = TransformerFactory.newInstance();

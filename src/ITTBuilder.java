@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
@@ -24,25 +25,16 @@ public class ITTBuilder {
 
     public static void prepFile() throws IOException {
 
-        System.out.println("POSCode: ");
-        Scanner pcode = new Scanner(System.in);
-        POSCode = pcode.nextLine().toString();
 
-        System.out.println("MerchandiseCode: ");
-        Scanner mcode = new Scanner(System.in);
-        merchCode = mcode.nextLine().toString();
+        POSCode = JOptionPane.showInputDialog("Enter the POS Code");
 
-        System.out.println("price: ");
-        Scanner cost = new Scanner(System.in);
-        price = cost.nextLine().toString();
+        merchCode = JOptionPane.showInputDialog("Enter the Merchandise Code");
 
-        System.out.println("Item ID: ");
-        Scanner item = new Scanner(System.in);
-        itemID = item.nextLine().toString();
+        price = JOptionPane.showInputDialog("Enter the Unit Price");
 
-        System.out.println("Description: ");
-        Scanner desc = new Scanner(System.in);
-        Desc = desc.nextLine().toString();
+        itemID = JOptionPane.showInputDialog("Enter the Item ID");
+
+        Desc = JOptionPane.showInputDialog("Enter the Item Description");
 
         xml += "<?xml version=\"1.0\" standalone=\"no\" ?>\n";
         xml += "<NAXML-MaintenanceRequest version=\"3.4\" xmlns=\"http://www.naxml.org/POSBO/Vocabulary/2003-10-16\" xmlns:vxt=\"urn:vfi-sapphire:np.naxmlext.2005-06-24\">\n";
@@ -68,7 +60,7 @@ public class ITTBuilder {
         xml += "\t\t\t\t<ItemID>" + itemID + "</ItemID>\n";
         xml += "\t\t\t\t<PaymentSystemsProductCode>400</PaymentSystemsProductCode>\n";
         xml += "\t\t\t\t<SellingUnits>1</SellingUnits>\n";
-        xml += "\t\t\t\tTaxStrategyID>1</TaxStrategyID>\n";
+        xml += "\t\t\t\t<TaxStrategyID>1</TaxStrategyID>\n";
         xml += "\t\t\t\t<PriceRequiredFlag value=\"no\"/>\n";
         xml += "\t\t\t</ITTData>\n";
         xml += "\t\t\t<Extension>\n";

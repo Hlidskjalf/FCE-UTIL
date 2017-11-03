@@ -112,6 +112,11 @@ public class ITTBuilder {
             Element itemCode = sem.createElement("ItemCode");
             ittDetail.appendChild(itemCode);
 
+            // POSCodeFormat tag
+            Element posCodeFormat = sem.createElement("POSCodeFormat");
+            posCodeFormat.setAttribute("format", "upcA");
+            itemCode.appendChild(posCodeFormat);
+
             // End of ItemCode block
 
             // End of ITTDetail block

@@ -149,7 +149,7 @@ public class App extends JPanel implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    ITTBuilder.prepFile();
+                    ITTBuilder.prepFile(storeNumber);
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }

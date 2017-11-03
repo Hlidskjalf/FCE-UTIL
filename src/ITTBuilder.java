@@ -38,7 +38,7 @@ public class ITTBuilder {
      * @throws IOException
      */
 
-    public static void prepFile() throws IOException {
+    public static void prepFile(String storenumber) throws IOException {
 
         // DOM Version
 
@@ -74,7 +74,7 @@ public class ITTBuilder {
 
             // StoreLocationID tag
             Element storeLocationID = itt.createElement("StoreLocationID");
-            storeLocationID.appendChild(itt.createTextNode("1099"));
+            storeLocationID.appendChild(itt.createTextNode(storenumber));
             transmissionHeader.appendChild(storeLocationID);
 
             // VendorName tag

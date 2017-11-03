@@ -159,7 +159,38 @@ public class ITTBuilder {
             itemID.appendChild(itt.createTextNode("*****"));
             ittData.appendChild(itemID);
 
+            // PaymentSystemsProductCode tag
+            Element paymentSystemsProductCode = itt.createElement("PaymentSystemsProductCode");
+            paymentSystemsProductCode.appendChild(itt.createTextNode("400"));
+            ittData.appendChild(paymentSystemsProductCode);
+
+            // SellingUnits tag
+            Element sellingUnits = itt.createElement("SellingUnits");
+            sellingUnits.appendChild(itt.createTextNode("1"));
+            ittData.appendChild(sellingUnits);
+
+            // TaxStrategyID tag
+            Element taxStrategyID = itt.createElement("TaxStrategyID");
+            taxStrategyID.appendChild(itt.createTextNode("1"));
+            ittData.appendChild(taxStrategyID);
+
+            // PriceRequiredFlag tag
+            Element priceRequiredFlag = itt.createElement("PriceRequiredFlag");
+            priceRequiredFlag.setAttribute("value", "no");
+            ittData.appendChild(priceRequiredFlag);
+
             // End of ITTData block
+
+            // Extension block, appended to ITTDetail
+            Element extension = itt.createElement("Extension");
+            ittDetail.appendChild(extension);
+
+            // vxt:FlagArticleFoodStamp tag
+            Element vxtFAFS = itt.createElement("vxt:FlagArticleFoodStamp");
+            vxtFAFS.setAttribute("value", "no");
+            extension.appendChild(vxtFAFS);
+
+            // End of Extension block
 
             // End of ITTDetail block
 

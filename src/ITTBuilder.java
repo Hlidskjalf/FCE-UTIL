@@ -117,7 +117,44 @@ public class ITTBuilder {
             posCodeFormat.setAttribute("format", "upcA");
             itemCode.appendChild(posCodeFormat);
 
+            // POSCode tag
+            Element posCode = itt.createElement("POSCode");
+            posCode.appendChild(itt.createTextNode("************"));
+            itemCode.appendChild(posCode);
+
+            // POSCodeModifier tag
+            Element posCodeMod = itt.createElement("POSCodeModifier");
+            posCodeMod.setAttribute("name", "1PK from CASE of 8");
+            posCodeMod.appendChild(itt.createTextNode("0"));
+            itemCode.appendChild(posCodeMod);
+
             // End of ItemCode block
+
+            // ITTData block, appended to ITTDetail
+            Element ittData = itt.createElement("ITTData");
+            ittDetail.appendChild(ittData);
+
+            // ActiveFlag tag
+            Element activeFlag = itt.createElement("ActiveFlag");
+            activeFlag.setAttribute("value", "yes");
+            ittData.appendChild(activeFlag);
+
+            // MerchandiseCode tag
+            Element merchCode = itt.createElement("MerchandiseCode");
+            merchCode.appendChild(itt.createTextNode("200"));
+            ittData.appendChild(merchCode);
+
+            // RegularSellPrice tag
+            Element regularSellPrice = itt.createElement("RegularSellPrice");
+            regularSellPrice.appendChild(itt.createTextNode("3.79"));
+            ittData.appendChild(regularSellPrice);
+
+            // Description tag
+            Element description = itt.createElement("Description");
+            description.appendChild(itt.createTextNode("ITEM DESCRIPTION"));
+            ittData.appendChild(description);
+
+            // End of ITTData block
 
             // End of ITTDetail block
 

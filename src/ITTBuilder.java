@@ -3,14 +3,13 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Scanner;
 
 public class ITTBuilder {
     /**
      * ITTBuilder class is designed to create a custom ITT file for the addition of a single
      * item into a POS system without the need for Pricebook processing. The user will be prompted
      * to enter all of the item specific details and a single <ITTDetail> will be created for the
-     * site. The methods createFile is generic, and is reused in SEMBuilder.java.
+     * site.
      */
 
     static String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
@@ -21,20 +20,24 @@ public class ITTBuilder {
     static String itemID = "";
     static String xml = "";
 
-    //TODO: Break down the steps and create functions. Leverage the UpdateStores script for pushing the files
+    /**
+     * Method prepFile uses JOptionPane input dialogs to prompt the user for input of the required
+     * pricebook variables, then builds the ITT file with the item specific variables.
+     * @throws IOException
+     */
 
     public static void prepFile() throws IOException {
 
 
+        // JOptionPane dialogs to gather pricebook variables
+
         POSCode = JOptionPane.showInputDialog("Enter the POS Code");
-
         merchCode = JOptionPane.showInputDialog("Enter the Merchandise Code");
-
         price = JOptionPane.showInputDialog("Enter the Unit Price");
-
         itemID = JOptionPane.showInputDialog("Enter the Item ID");
-
         Desc = JOptionPane.showInputDialog("Enter the Item Description");
+
+        // XML Build
 
         xml += "<?xml version=\"1.0\" standalone=\"no\" ?>\n";
         xml += "<NAXML-MaintenanceRequest version=\"3.4\" xmlns=\"http://www.naxml.org/POSBO/Vocabulary/2003-10-16\" xmlns:vxt=\"urn:vfi-sapphire:np.naxmlext.2005-06-24\">\n";
@@ -74,6 +77,10 @@ public class ITTBuilder {
 
     }
 
+    /**
+     * Method build file actually handles the creation of the file. This method should expand to placing the file into
+     * the correct directory and running the FTP Script as well.
+     */
     public static void buildFile() {
 
         try (Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("xml/ITT" + timeStamp + ".xml"), StandardCharsets.UTF_8))) {

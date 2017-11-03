@@ -1,8 +1,18 @@
+import org.w3c.dom.Attr;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Scanner;
 
 public class SEMBuilder extends App {
     /**
@@ -12,42 +22,92 @@ public class SEMBuilder extends App {
      * site. The methods createFile is generic, and is reused in SEMBuilder.java.
      */
 
-    //TODO: Break down the steps and create functions. Leverage the UpdateStores script for pushing the files
-
         static String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-        static String placeholder = "";
-        static String placeholder2 = "";
-        static String placeholder3 = "";
-        static String xml = "";
 
         //TODO: Break down the steps and create functions. Leverage the UpdateStores script for pushing the files
 
     public static void prepFile() throws IOException {
 
-        System.out.println("Enter 1: ");
-        Scanner input = new Scanner(System.in);
-        placeholder = input.nextLine().toString();
-        System.out.println("Enter 2: ");
-        placeholder2 = input.nextLine().toString();
-        System.out.println("Enter 3: ");
-        placeholder3 = input.nextLine().toString();
-        xml += "Line " + placeholder + "\n";
-        xml += "Line " + placeholder2 + "\n";
-        xml += "Line " + placeholder3 + "\n";
-        xml += "Line " + placeholder2 + "\n";
-        xml += "Line " + placeholder3 + "\n";
-        xml += "Line two";
 
-        buildFile();
+        try {
 
-    }
+            DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 
-    public static void buildFile() {
+            // Header and root
+            Document sem = docBuilder.newDocument();
+            Element rootElement = sem.createElement("NAXML-MaintenanceRequest");
+            Attr version = sem.createAttribute("version");
+            version.setValue("3.4");
+            Attr xmlns = sem.createAttribute("xmlns");
+            xmlns.setValue("http://www.naxml.org/POSBO/Vocabulary/2003-10-16");
+            Attr xmlns_vxt = sem.createAttribute("xmlns:vxt");
+            xmlns_vxt.setValue("urn:vfi-sapphire:np.naxmlext.2005-06-24");
+            rootElement.setAttributeNode(version);
+            rootElement.setAttributeNode(xmlns);
+            rootElement.setAttributeNode(xmlns_vxt);
+            sem.appendChild(rootElement);
 
-        try (Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("xml/ITT" + timeStamp + ".xml"), StandardCharsets.UTF_8))) {
-            writer.write(xml);
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            // Transmission header
+            Element transmissionHeader = sem.createElement("TransmissionHeader");
+            rootElement.appendChild(transmissionHeader);
+
+            // StoreLocationID tag
+            Element storeLocationID = sem.createElement("StoreLocationID");
+            storeLocationID.appendChild(sem.createTextNode("1099"));
+            transmissionHeader.appendChild(storeLocationID);
+
+            // VendorName tag
+            Element vendorName = sem.createElement("VendorName");
+            vendorName.appendChild(sem.createTextNode("Broken Coin"));
+            transmissionHeader.appendChild(vendorName);
+
+            // VendorModelVersion tag
+            Element vendorModelVersion = sem.createElement("VendorModelVersion");
+            vendorModelVersion.appendChild(sem.createTextNode("MWS"));
+            transmissionHeader.appendChild(vendorModelVersion);
+
+            //ItemMaintenance block
+            Element itemMaintenance = sem.createElement("ItemMaintenance");
+            rootElement.appendChild(itemMaintenance);
+
+            // TableAction tag
+            Element tableAction = sem.createElement("TableAction");
+            Attr ttype = sem.createAttribute("type");
+            ttype.setValue("update");
+            tableAction.setAttributeNode(ttype);
+            itemMaintenance.appendChild(tableAction);
+
+            // RecordAction tag
+            Element recordAction = sem.createElement("RecordAction");
+            Attr rtype = sem.createAttribute("type");
+            rtype.setValue("addchange");
+            recordAction.setAttributeNode(rtype);
+            itemMaintenance.appendChild(recordAction);
+
+
+            // shorten way
+            // staff.setAttribute("id", "1");
+
+
+            // write the content into xml file
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(sem);
+            StreamResult result = new StreamResult(new File("xml/SEM" + timeStamp + ".xml"));
+
+            // Output to console for testing
+            // StreamResult result = new StreamResult(System.out);
+
+            transformer.transform(source, result);
+
+            System.out.println("File saved!");
+
+        } catch (ParserConfigurationException pce) {
+            pce.printStackTrace();
+        } catch (TransformerException tfe) {
+            tfe.printStackTrace();
         }
     }
 }

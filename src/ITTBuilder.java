@@ -1,4 +1,16 @@
+import org.w3c.dom.Attr;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import javax.swing.*;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
@@ -28,6 +40,92 @@ public class ITTBuilder {
 
     public static void prepFile() throws IOException {
 
+        // DOM Version
+
+        try {
+
+            DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+
+            // Header and root
+            Document sem = docBuilder.newDocument();
+            Element rootElement = sem.createElement("NAXML-MaintenanceRequest");
+            Attr version = sem.createAttribute("version");
+            version.setValue("3.4");
+            Attr xmlns = sem.createAttribute("xmlns");
+            xmlns.setValue("http://www.naxml.org/POSBO/Vocabulary/2003-10-16");
+            Attr xmlns_vxt = sem.createAttribute("xmlns:vxt");
+            xmlns_vxt.setValue("urn:vfi-sapphire:np.naxmlext.2005-06-24");
+            rootElement.setAttributeNode(version);
+            rootElement.setAttributeNode(xmlns);
+            rootElement.setAttributeNode(xmlns_vxt);
+            sem.appendChild(rootElement);
+
+
+            // Transmission header block, appended to root
+            Element transmissionHeader = sem.createElement("TransmissionHeader");
+            rootElement.appendChild(transmissionHeader);
+
+            // StoreLocationID tag
+            Element storeLocationID = sem.createElement("StoreLocationID");
+            storeLocationID.appendChild(sem.createTextNode("1099"));
+            transmissionHeader.appendChild(storeLocationID);
+
+            // VendorName tag
+            Element vendorName = sem.createElement("VendorName");
+            vendorName.appendChild(sem.createTextNode("Broken Coin"));
+            transmissionHeader.appendChild(vendorName);
+
+            // VendorModelVersion tag
+            Element vendorModelVersion = sem.createElement("VendorModelVersion");
+            vendorModelVersion.appendChild(sem.createTextNode("MWS"));
+            transmissionHeader.appendChild(vendorModelVersion);
+
+            //ItemMaintenance block, appended to root
+            Element itemMaintenance = sem.createElement("ItemMaintenance");
+            rootElement.appendChild(itemMaintenance);
+
+            // TableAction tag
+            Element tableAction = sem.createElement("TableAction");
+            Attr ttype = sem.createAttribute("type");
+            ttype.setValue("update");
+            tableAction.setAttributeNode(ttype);
+            itemMaintenance.appendChild(tableAction);
+
+            // RecordAction tag with brevity example
+            Element recordAction = sem.createElement("RecordAction");
+            //Attr rtype = sem.createAttribute("type");
+            //rtype.setValue("addchange");
+            //recordAction.setAttributeNode(rtype);
+            recordAction.setAttribute("type", "addchange");
+            itemMaintenance.appendChild(recordAction);
+
+            // ITTDetail block, appended to ItemMaintenance tag
+            Element ittDetail = sem.createElement("ITTDetail");
+            itemMaintenance.appendChild(ittDetail);
+
+            // write the content into xml file
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+
+            // Data in the file to be written
+            DOMSource source = new DOMSource(sem);
+
+            // Writing the file (set PATH here)
+            StreamResult result = new StreamResult(new File("xml/ITT" + timeStamp + ".xml"));
+
+            transformer.transform(source, result);
+
+            System.out.println("File saved!");
+
+        } catch (ParserConfigurationException pce) {
+            pce.printStackTrace();
+        } catch (TransformerException tfe) {
+            tfe.printStackTrace();
+        }
+    }
+
+/*  Manual version - human readable
 
         // JOptionPane dialogs to gather pricebook variables
 
@@ -76,6 +174,7 @@ public class ITTBuilder {
         buildFile();
 
     }
+    */
 
     /**
      * Method build file actually handles the creation of the file. This method should expand to placing the file into

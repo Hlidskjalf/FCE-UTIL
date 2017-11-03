@@ -88,7 +88,7 @@ public class App extends JPanel implements ActionListener {
         panel.add(vnc, c);
         panel.add(price_update, c);
         panel.add(Exit, c);
-        
+
 
         /**
          * This section is for the ActionListeners for each button. The functions for the buttons is defined
@@ -104,7 +104,6 @@ public class App extends JPanel implements ActionListener {
                 Title.setText("FCE-UTIL                 Store Number: " + storeNumber);
             }
         });
-
         termMWS.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

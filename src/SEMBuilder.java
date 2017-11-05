@@ -11,10 +11,8 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
-public class SEMBuilder extends App {
+public class SEMBuilder extends ITTBuilder {
     /**
      * ITTBuilder class is designed to create a custom ITT file for the addition of a single
      * item into a POS system without the need for Pricebook processing. The user will be prompted
@@ -22,7 +20,7 @@ public class SEMBuilder extends App {
      * site. The methods createFile is generic, and is reused in SEMBuilder.java.
      */
 
-        static String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        static String timeStamp = ITTBuilder.timeStamp;
 
         //TODO: Break down the steps and create functions. Leverage the UpdateStores script for pushing the files
 

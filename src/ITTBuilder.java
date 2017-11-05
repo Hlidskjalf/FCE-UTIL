@@ -29,7 +29,6 @@ public class ITTBuilder {
     static String price = "";
     static String Desc = "";
     static String itemID = "";
-    static String xml = "";
 
     /**
      * Method prepFile uses JOptionPane input dialogs to prompt the user for input of the required
@@ -214,8 +213,6 @@ public class ITTBuilder {
             StreamResult result = new StreamResult(new File("xml/ITT" + timeStamp + ".xml"));
 
             transformer.transform(source, result);
-
-            System.out.println("File saved!");
 
         } catch (ParserConfigurationException pce) {
             pce.printStackTrace();

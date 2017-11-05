@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="affdeeb6-2125-4a9e-a0ca-535806916426" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FCE-UTIL/App$2.class" afterPath="$PROJECT_DIR$/out/production/FCE-UTIL/App$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FCE-UTIL/App$3.class" afterPath="$PROJECT_DIR$/out/production/FCE-UTIL/App$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FCE-UTIL/App$4.class" afterPath="$PROJECT_DIR$/out/production/FCE-UTIL/App$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FCE-UTIL/App$5.class" afterPath="$PROJECT_DIR$/out/production/FCE-UTIL/App$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FCE-UTIL/App$6.class" afterPath="$PROJECT_DIR$/out/production/FCE-UTIL/App$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FCE-UTIL/App$7.class" afterPath="$PROJECT_DIR$/out/production/FCE-UTIL/App$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FCE-UTIL/App$8.class" afterPath="$PROJECT_DIR$/out/production/FCE-UTIL/App$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FCE-UTIL/App$9.class" afterPath="$PROJECT_DIR$/out/production/FCE-UTIL/App$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FCE-UTIL/App.class" afterPath="$PROJECT_DIR$/out/production/FCE-UTIL/App.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ITTBuilder.java" afterPath="$PROJECT_DIR$/src/ITTBuilder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SEMBuilder.java" afterPath="$PROJECT_DIR$/src/SEMBuilder.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/app/.gradle/" />
@@ -64,7 +54,7 @@
       <file leaf-file-name="ButtonFunctions.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ButtonFunctions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
+            <state relative-caret-position="945">
               <caret line="63" column="17" lean-forward="false" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
               <folding />
             </state>
@@ -74,8 +64,8 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+            <state relative-caret-position="240">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,8 +76,8 @@
       <file leaf-file-name="ITT20171103184008.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xml/ITT20171103184008.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="54" lean-forward="true" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
+            <state relative-caret-position="405">
+              <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -100,21 +90,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ITTBuilder.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ITTBuilder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ITTBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="-136">
+              <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SEMBuilder.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SEMBuilder.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SEMBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+            <state relative-caret-position="180">
+              <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -701,7 +691,6 @@
         <option value="$PROJECT_DIR$/xml/SEM20171103084718.xml" />
         <option value="$PROJECT_DIR$/xml/SEM20171103085523.xml" />
         <option value="$PROJECT_DIR$/xml/SEM20171103090014.xml" />
-        <option value="$PROJECT_DIR$/src/SEMBuilder.java" />
         <option value="$PROJECT_DIR$/xml/ITT20171103093113.xml" />
         <option value="$PROJECT_DIR$/xml/ITT20171103100318.xml" />
         <option value="$PROJECT_DIR$/xml/ITT20171103111752.xml" />
@@ -712,6 +701,7 @@
         <option value="$PROJECT_DIR$/src/App.java" />
         <option value="$PROJECT_DIR$/xml/ITT20171103184008.xml" />
         <option value="$PROJECT_DIR$/src/ITTBuilder.java" />
+        <option value="$PROJECT_DIR$/src/SEMBuilder.java" />
       </list>
     </option>
   </component>
@@ -766,7 +756,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="307" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="301" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -1007,7 +997,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/xml/ITT20171030213509.xml" />
     <entry file="file://$PROJECT_DIR$/xml/ITT20171030213626.xml" />
     <entry file="file://$PROJECT_DIR$/xml/ITT20171030213708.xml" />
     <entry file="file://$PROJECT_DIR$/xml/ITT20171030214001.xml" />
@@ -1052,23 +1041,8 @@
     <entry file="file://$PROJECT_DIR$/xml/ITT20171103100318.xml" />
     <entry file="file://$PROJECT_DIR$/xml/ITT20171103111752.xml" />
     <entry file="file://$PROJECT_DIR$/xml/ITT20171103142056.xml" />
-    <entry file="file://$PROJECT_DIR$/src/App.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xml/ITT20171103144329.xml" />
     <entry file="file://$PROJECT_DIR$/xml/ITT20171103144832.xml" />
-    <entry file="file://$PROJECT_DIR$/src/SEMBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1104,37 +1078,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ButtonFunctions.java">
+    <entry file="file://$PROJECT_DIR$/src/App.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xml/ITT20171103184940.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="63" column="17" lean-forward="false" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xml/ITT20171103184008.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xml/ITT20171103184008.xml">
+    <entry file="file://$PROJECT_DIR$/src/ButtonFunctions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="54" lean-forward="true" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
+        <state relative-caret-position="945">
+          <caret line="63" column="17" lean-forward="false" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ITTBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="-136">
+          <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SEMBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="FCE-UTIL:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/FCE_UTIL_jar</output-path>
+    <root id="archive" name="FCE-UTIL.jar">
+      <element id="module-output" name="FCE-UTIL" />
+    </root>
+  </artifact>
+</component>

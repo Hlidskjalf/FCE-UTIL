@@ -36,12 +36,12 @@ public class ButtonFunctions {
 
         String cmd = primer; // + "ping fce-" + storeNumber + " -t";
 
-        ProcessBuilder pb = new ProcessBuilder(cmd);
         try {
-            Process p = pb.start();
+            Process rt = Runtime.getRuntime().exec(cmd);
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
     }
 

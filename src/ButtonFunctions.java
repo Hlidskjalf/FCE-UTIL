@@ -120,7 +120,7 @@ public class ButtonFunctions {
          * Launch a VNC Viewer session with args, provided by the Store Number.
          */
 
-        String cmd = "\"C:\\Program Files\\unvc bvba\\UltraVNC\\vncviewer.exe\" FCE-" + storeNumber;
+        String cmd = primer + "\"C:\\Program Files\\unvc bvba\\UltraVNC\\vncviewer.exe\" FCE-" + storeNumber;
 
         try {
             Process rt = Runtime.getRuntime().exec(cmd);

@@ -88,6 +88,14 @@ public class ButtonFunctions {
          * a 32GB SSD making space a real concern.
          */
 
+        String cmd = primer + psexec + head + storeNumber + user + password + "C:\\Install\\clean_up.bat";
+
+        try {
+            Process rt = Runtime.getRuntime().exec(cmd);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public static void launchVNC(String storeNumber) {

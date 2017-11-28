@@ -62,16 +62,19 @@ public class ButtonFunctions {
          * PDI software after Pinnacle is completely phased out.
          */
 
-        //TODO build PSEXEC string to terminate MWS Store remotely
         String cmd = primer + psexec + head + storeNumber + user + password + "taskkill" + mws;
 
-        System.out.println(cmd);
+        try {
+            Process rt = Runtime.getRuntime().exec(cmd);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void terminateCustomProcess(String storeNumber) {
         /**
          * @param storeNumber
-         * Remotely terminate anything ending in .exe one the site designated by the Store Number.
+         * Remotely terminate anything ending in .exe on the site designated by the Store Number.
          */
 
     }

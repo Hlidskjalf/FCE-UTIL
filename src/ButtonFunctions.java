@@ -34,7 +34,7 @@ public class ButtonFunctions {
          * by the Store Number string.
          */
 
-        String cmd = primer; // + "ping fce-" + storeNumber + " -t";
+        String cmd = primer + "ping fce-" + storeNumber + " -t";
 
         try {
             Process rt = Runtime.getRuntime().exec(cmd);

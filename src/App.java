@@ -85,7 +85,7 @@ public class App extends JPanel implements ActionListener {
         panel.add(reboot, c);
         panel.add(termCust, c);
         panel.add(cleanUp, c);
-        //panel.add(vnc, c);
+        panel.add(vnc, c);
         //panel.add(price_update, c);
         panel.add(Exit, c);
 

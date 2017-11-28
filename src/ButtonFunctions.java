@@ -85,12 +85,7 @@ public class ButtonFunctions {
          * Remotely terminate anything ending in .exe on the site designated by the Store Number.
          */
 
-        String process = (String) JOptionPane.showInputDialog(null,"Enter the name of the process you wish to terminate",
-                "Terminate Custom Process",
-                JOptionPane.QUESTION_MESSAGE,
-                null,
-                null,
-                null);
+        String process = (String) JOptionPane.showInputDialog("Enter the name of the process you wish to terminate");
         String cmd = primer + psexec + head + storeNumber + user + password + "taskkill /f /im " + process + exe;
 
         try {
@@ -124,6 +119,14 @@ public class ButtonFunctions {
         /**
          * Launch a VNC Viewer session with args, provided by the Store Number.
          */
+
+        String cmd = "\"C:\\Program Files\\unvc bvba\\UltraVNC\\vncviewer.exe\" FCE-" + storeNumber;
+
+        try {
+            Process rt = Runtime.getRuntime().exec(cmd);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }

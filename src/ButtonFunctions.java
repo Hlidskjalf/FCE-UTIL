@@ -51,6 +51,14 @@ public class ButtonFunctions {
          * Reboot the site using psshutdown using the Store Number.
          */
 
+        String cmd = primer + psexec + head + storeNumber + user + password + "shutdown -r -f";
+
+        try {
+            Process rt = Runtime.getRuntime().exec(cmd);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public static void terminateMWS(String storeNumber) {

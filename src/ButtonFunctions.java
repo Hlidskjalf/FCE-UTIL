@@ -85,7 +85,12 @@ public class ButtonFunctions {
          * Remotely terminate anything ending in .exe on the site designated by the Store Number.
          */
 
-        String process = JOptionPane.showInputDialog("Enter the name of the process you wish to terminate");
+        String process = (String) JOptionPane.showInputDialog(null,"Enter the name of the process you wish to terminate",
+                "Terminate Custom Process",
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                null,
+                null);
         String cmd = primer + psexec + head + storeNumber + user + password + "taskkill /f /im " + process + exe;
 
         try {

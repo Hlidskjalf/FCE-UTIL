@@ -178,7 +178,7 @@ public class App extends JPanel implements ActionListener {
         frame.setContentPane(panel);
 
         frame.pack();
-        frame.setSize(570, 450);
+        frame.setSize(600, 470);
         frame.setVisible(true);
 
     }

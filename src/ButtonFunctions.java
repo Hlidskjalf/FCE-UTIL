@@ -4,7 +4,7 @@ import java.io.IOException;
 public class ButtonFunctions {
 
     // PSEXEC specific variables
-    static String primer = "cmd.exe /c start ";
+    static String primer = "cmd /c start cmd.exe";
     static String psexec = "psexec ";
     static String head = "\\\\fce-";
     static String user = " -u helpdesk ";

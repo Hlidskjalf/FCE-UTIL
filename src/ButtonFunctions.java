@@ -62,7 +62,7 @@ public class ButtonFunctions {
          * PDI software after Pinnacle is completely phased out.
          */
 
-        String cmd = primer + psexec + head + storeNumber + user + password + "taskkill" + mws;
+        String cmd = primer + psexec + head + storeNumber + user + password + "taskkill /f /im" + mws;
 
         try {
             Process rt = Runtime.getRuntime().exec(cmd);

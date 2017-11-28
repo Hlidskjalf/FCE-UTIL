@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.io.IOException;
 
 public class ButtonFunctions {
 
@@ -35,7 +36,13 @@ public class ButtonFunctions {
 
         String cmd = primer + "ping fce-" + storeNumber + " -t";
 
-        System.out.println(cmd);
+        ProcessBuilder pb = new ProcessBuilder(cmd);
+        try {
+            Process p = pb.start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public static void rebootStore(String storeNumber) {
